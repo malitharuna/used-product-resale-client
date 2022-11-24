@@ -1,5 +1,6 @@
 import React from 'react';
 import  { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +17,15 @@ const Navbar = () => {
                       >
                         Product
                       </a>
+                    </li>
+                    <li>
+                      <Link to='/blog'
+                        aria-label="Our product"
+                        title="Our product"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
+                     
+                        Blogs
+                      </Link>
                     </li>
                     <li>
                       <a
@@ -60,7 +70,7 @@ const Navbar = () => {
                       <rect x="14" y="11" width="7" height="12" />
                     </svg>
                     <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                      Company
+                      Desired 
                     </span>
                   </a>
                   <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
