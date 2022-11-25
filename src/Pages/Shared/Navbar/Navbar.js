@@ -1,6 +1,6 @@
 import React from 'react';
 import  { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,14 +9,14 @@ const Navbar = () => {
                 <div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
                   <ul className="flex items-center hidden space-x-8 lg:flex">
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/"
                         aria-label="Our product"
                         title="Our product"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Product
-                      </a>
+                        Home
+                      </Link>
                     </li>
                     <li>
                       <Link to='/blog'
@@ -70,7 +70,7 @@ const Navbar = () => {
                       <rect x="14" y="11" width="7" height="12" />
                     </svg>
                     <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                      Desired 
+                      Desired Wheel
                     </span>
                   </a>
                   <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
