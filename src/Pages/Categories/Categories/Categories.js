@@ -3,7 +3,7 @@ import image from '../../../assets/images/1615787203_120300490_3441430089272594_
 
 const Categories = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  mx-auto py-6'>
             <div className="card bg-base-100 shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">

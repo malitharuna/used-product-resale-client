@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider';
+import { signInWithPopup } from 'firebase/auth';
 
 const Register = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const {createUser, updateUser} = useContext(AuthContext);
+    const {createUser, updateUser, googleProvider, auth} = useContext(AuthContext);
     const [registerError, setRegisterError] = useState('');
 
     const handleRegister = (data) => {
@@ -29,6 +30,19 @@ const Register = () => {
             console.log(error);
             setRegisterError(error.message)
         });
+    }
+
+    const handleGoogleSignIn =() =>{
+        signInWithPopup(auth, googleProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+        console.log('google sign in metgod');
+    ;
     }
 
     return (
@@ -65,7 +79,7 @@ const Register = () => {
                     </div>
                    
                     <input className=' btn btn-outline my-4 w-full' value='Register' type="submit" />
-                    <button className='btn btn-success w-full'>CONTINUE WITH GOOGLE </button>
+                    <button onClick={handleGoogleSignIn} className='btn btn-success w-full'>CONTINUE WITH GOOGLE </button>
                     
                     <div>
                         {
