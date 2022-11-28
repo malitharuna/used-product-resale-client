@@ -1,17 +1,22 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Modal from './Modal/Modal';
 
 
 const Products = () => {
-
+  const [booking, setBooking] = useState({});
   const products = useLoaderData();
   console.log(products);
 
 
+  const modalInfoHandler =(data) =>{
+    console.log('modal information')
+  }
+ 
   return (
 <div className='p-0 mx-auto'>
-<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6'>
+  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6'>
       {
         products.map(product => <div key={product._id} className="card bg-base-100 text-left shadow-2xl ">
           <figure className="px-10 pt-10">
@@ -25,13 +30,14 @@ const Products = () => {
             <p>Engine Capacity: {product.Enginecapacity}</p>
             <p>Year of Manufacture:{product.YearofManufacture}</p>
             <div className="card-actions">
-              <button className="btn btn-primary">Book Now</button>
+              <label onClick={()=>setBooking(product)} htmlFor="my-modal" className="btn btn-accent">Book Now</label>
             </div>
           </div>
         </div>
         )
       }
-    </div>
+  </div>
+  <Modal booking={booking}></Modal>
 </div>
 
   );

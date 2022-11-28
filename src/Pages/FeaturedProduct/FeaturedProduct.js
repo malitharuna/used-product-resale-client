@@ -44,11 +44,11 @@ const FeaturedProduct = () => {
                   </svg> */}
             <span className="relative">****  ****</span>
           </span>{''}
-          You Can See Here Now NEW Posted and Featured Product
+          You Can See Here Now New Posted and Wiki about MotorCycle
         </h2>
         <p className="text-base text-gray-700 md:text-lg">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
+          The six main types of motorcycles are generally recognized as standard, cruiser, touring, sports, off-road, and dual-purpose.Sport touring is sometimes recognized as a seventh category or integrated with the touring category.
+         
         </p>
       </div>
       <div className="grid max-w-screen-lg gap-8 row-gap-10 mx-auto lg:grid-cols-2">
@@ -74,7 +74,7 @@ const FeaturedProduct = () => {
           <div>
             <h6 className="mb-3 text-xl font-bold leading-5">The Sports Motor</h6>
             <p className="mb-3 text-sm text-gray-900">
-            Sport bikes are road bikes which emphasize top speed, acceleration, braking, handling and grip, typically at the expense of comfort and fuel economy in comparison to other motorcycle types. Sport bikes have comparatively high performance engines supported within a lightweight frame.
+              Sport bikes are road bikes which emphasize top speed, acceleration, braking, handling and grip, typically at the expense of comfort and fuel economy in comparison to other motorcycle types. Sport bikes have comparatively high performance engines supported within a lightweight frame.
             </p>
             <a
               href="/"
@@ -106,10 +106,10 @@ const FeaturedProduct = () => {
           </div>
           <div>
             <h6 className="mb-3 text-xl font-bold leading-5">
-            Cruiser MotorCycle
+              Cruiser MotorCycle
             </h6>
             <p className="mb-3 text-sm text-gray-900">
-            Cruiser motorcycles (or simply cruisers) are styled after American motorcycles from the 1930s to the early 1960s, such as those made by Harley-Davidson, Indian, and Excelsior-Henderson. Harley-Davidsons largely define the cruiser category, and large-displacement V-twin engines are the norm,
+              Cruiser motorcycles (or simply cruisers) are styled after American motorcycles from the 1930s to the early 1960s, such as those made by Harley-Davidson, Indian, and Excelsior-Henderson. Harley-Davidsons largely define the cruiser category, and large-displacement V-twin engines are the norm,
             </p>
             <a
               href="/"
