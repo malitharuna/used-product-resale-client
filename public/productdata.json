@@ -1,0 +1,56 @@
+[
+    {
+        "Category_id": 1,
+        "Biketype": "Motorcycle",
+		"Brand": "Bajaj",
+        "Img": "https://bd.gaadicdn.com/processedimages/bajaj/bajaj-pulsar-200-ns/640X309/bajaj-pulsar-200-ns61543ebc2d0b7.jpg",
+        "model": "Pulsar NS",
+        "YearofManufacture": "2018",
+        "condition": "used",
+        "color": "Black",
+		"Kilometersrun":"18,000 km",
+		"Enginecapacity":"160 cc",
+        "selling_address": "Uttara Model Town, Uttara-14,Dhaka-1230",
+        "price": "Tk 128,000(negotiable)",
+        "seller_info": {
+            "name": "Malitha Runa",
+            "email": "rmalitha0011@gmail.com"
+        }
+    },
+	
+     {   "Category_id": 2,
+        "Biketype": "Motorcycle",
+		"Brand": "Yamaha",
+        "Img": "https://bd.gaadicdn.com/processedimages/bajaj/bajaj-pulsar-200-ns/640X309/bajaj-pulsar-200-ns61543ebc2d0b7.jpg",
+        "model": "R15",
+        "YearofManufacture": "2021",
+        "condition": "used",
+        "color": "Silver",
+		"Kilometersrun":"7,000 km",
+		"Enginecapacity":"155 cc",
+        "selling_address": "Uttara Model Town, Uttara-14,Dhaka-1230",
+        "price": "Tk 420,000(negotiable)",
+        "seller_info": {
+            "name": "Malitha Runa",
+            "email": "rmalitha0011@gmail.com"
+        }
+    },
+	{
+        "Category_id": 3,
+        "Biketype": "Motorcycle",
+		"Brand": "Hero Honda",
+        "Img": "https://bd.gaadicdn.com/processedimages/bajaj/bajaj-pulsar-200-ns/640X309/bajaj-pulsar-200-ns61543ebc2d0b7.jpg",
+        "model": "Hunk",
+        "YearofManufacture": "2016",
+        "condition": "used",
+        "color": "Black",
+		"KilometersRun":"23,500 km",
+		"EngineCapacity":"150 cc",
+        "selling_address": "Uttara Model Town, Uttara-14,Dhaka-1230",
+        "price": "Tk 110,000(negotiable)",
+        "seller_info": {
+            "name": "Malitha Runa",
+            "email": "rmalitha0011@gmail.com"
+        }
+    }
+]

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider';
@@ -8,41 +8,73 @@ import { signInWithPopup } from 'firebase/auth';
 const Register = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const {createUser, updateUser, googleProvider, auth} = useContext(AuthContext);
+    const { createUser, updateUser, googleHandler } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState('');
+    const navigate = useNavigate();
 
     const handleRegister = (data) => {
         console.log(data)
         setRegisterError('')
-        createUser(data.email, data.password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            toast('Your Profile Created Successfully')
-            const userInfo = {
-                displayName: data.name
-            }
-            updateUser(userInfo)
-            .then(() =>{})
-            .catch(err => console.log(err));
-        })
-        .catch(error => {
-            console.log(error);
-            setRegisterError(error.message)
-        });
+        createUser(data.email, data.password, data.role)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+
+                const userInfo = {
+                    displayName: data.name
+                }
+
+                updateUser(userInfo)
+                    .then(() => {
+                        saveUserDataDatabase(data.name, data.email, data.role);
+                    })
+                    .catch(err => console.log(err));
+            })
+            .catch(error => {
+                console.log(error);
+                setRegisterError(error.message)
+            });
     }
 
-    const handleGoogleSignIn =() =>{
-        signInWithPopup(auth, googleProvider)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
+    const handleGoogleSignIn = () => {
+        googleHandler()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                saveUserDataDatabase(user.displayName, user.email);
+                navigate('/');
+                console.log(user);
+            })
+             
+
+            .catch(error => {
+                console.log(error)
+            })
+        console.log('Signed in with Google');
+    }
+
+    const saveUserDataDatabase = (name, email, role) => {
+        console.log(name, email, role);
+
+        const user = {
+            name: name,
+            email: email,
+            role: typeof role == "undefined" ? 'buyer' : role,
+        }
+        fetch('http://localhost:5000/addUser', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
         })
-        .catch(error =>{
-            console.log(error)
-        })
-        console.log('google sign in metgod');
-    ;
+            .then(res => res.json())
+            .then(data => {
+                toast.success("User register success")
+                navigate('/')
+                //  setCreatedUserEmail(email) 
+            })
+
     }
 
     return (
@@ -71,22 +103,22 @@ const Register = () => {
                     </div>
                     <div>
                         <label htmlFor="role" className='font-bold'>Register As</label>
-                        
-                        <select {...register("role", {required:'User role is required'})}  className='my-4 btn btn-outline  w-full'>
+
+                        <select {...register("role", { required: 'User role is required' })} className='my-4 btn btn-outline  w-full'>
                             <option value="seller">Seller</option>
                             <option value="buyer">Buyer</option>
                         </select>
                     </div>
-                   
+
                     <input className=' btn btn-outline my-4 w-full' value='Register' type="submit" />
                     <button onClick={handleGoogleSignIn} className='btn btn-success w-full'>CONTINUE WITH GOOGLE </button>
-                    
+
                     <div>
                         {
                             registerError && <p className='text-red-500'>{registerError}</p>
                         }
                     </div>
-                
+
                 </form>
                 <p>Already Registered <Link className='text-primary' to='/login'> Please Login </Link></p>
             </div>
