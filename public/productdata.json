@@ -17,11 +17,29 @@
             "email": "rmalitha0011@gmail.com"
         }
     },
+    {
+        "Category_id": 2,
+        "Biketype": "Motorcycle",
+		"Brand": "Bajaj",
+        "Img": "https://i.bikroy-st.com/bajaj-pulsar-2016-2016-for-sale-dhaka-16/cede7e76-a4d6-49b4-9eba-6e8a6a383a6e/780/585/fitted.jpg",
+        "model": "Pulsar",
+        "YearofManufacture": "2016",
+        "condition": "used",
+        "color": "Black",
+		"Kilometersrun":"26,000 km",
+		"Enginecapacity":"150 cc",
+        "selling_address": "Uttara Model Town, Uttara-14,Dhaka-1230",
+        "price": "Tk 128,000(negotiable)",
+        "seller_info": {
+            "name": "Malitha Runa",
+            "email": "rmalitha0011@gmail.com"
+        }
+    },
 	
-     {   "Category_id": 2,
+     {   "Category_id": 3,
         "Biketype": "Motorcycle",
 		"Brand": "Yamaha",
-        "Img": "https://bd.gaadicdn.com/processedimages/bajaj/bajaj-pulsar-200-ns/640X309/bajaj-pulsar-200-ns61543ebc2d0b7.jpg",
+        "Img": "https://i.bikroy-st.com/bajaj-pulsar-2016-2016-for-sale-dhaka-16/cede7e76-a4d6-49b4-9eba-6e8a6a383a6e/780/585/fitted.jpg",
         "model": "R15",
         "YearofManufacture": "2021",
         "condition": "used",
@@ -35,19 +53,54 @@
             "email": "rmalitha0011@gmail.com"
         }
     },
-	{
-        "Category_id": 3,
+     {   "Category_id": 4,
         "Biketype": "Motorcycle",
-		"Brand": "Hero Honda",
-        "Img": "https://bd.gaadicdn.com/processedimages/bajaj/bajaj-pulsar-200-ns/640X309/bajaj-pulsar-200-ns61543ebc2d0b7.jpg",
+		"Brand": "Yamaha",
+        "Img": "https://www.puranbike.com/images/users/14627/thumb/1622515790_IMG_20210601_083422.jpg",
+        "model": "R15",
+        "YearofManufacture": "2020",
+        "condition": "used",
+        "color": "Blue",
+		"Kilometersrun":"9,000 km",
+		"Enginecapacity":"150 cc",
+        "selling_address": "Uttara Model Town, Uttara-14,Dhaka-1230",
+        "price": "Tk 170,000(negotiable)",
+        "seller_info": {
+            "name": "Malitha Runa",
+            "email": "rmalitha0011@gmail.com"
+        }
+    },
+	{
+        "Category_id": 5,
+        "Biketype": "Motorcycle",
+		"Brand": "HeroHonda",
+        "Img": "https://www.puranbike.com/images/users/2036/1543168970_IMG_20181110_153216.jpg",
         "model": "Hunk",
         "YearofManufacture": "2016",
         "condition": "used",
-        "color": "Black",
+        "color": "Red",
 		"KilometersRun":"23,500 km",
 		"EngineCapacity":"150 cc",
         "selling_address": "Uttara Model Town, Uttara-14,Dhaka-1230",
-        "price": "Tk 110,000(negotiable)",
+        "price": "Tk 130,000(negotiable)",
+        "seller_info": {
+            "name": "Malitha Runa",
+            "email": "rmalitha0011@gmail.com"
+        }
+    },
+	{
+        "Category_id": 6,
+        "Biketype": "Motorcycle",
+		"Brand": "HeroHonda",
+        "Img": "https://teja8.kuikr.com/i5/20210510/2009-Hero-Splendor-Plus---45000-kms-driven-in-Bank-Colony-VB201705171774173-ak_LWBP463494199-1620650695_lg.jpeg",
+        "model": "Splendor",
+        "YearofManufacture": "2018",
+        "condition": "used",
+        "color": "Black-Yellow",
+		"KilometersRun":"20,500 km",
+		"EngineCapacity":"150 cc",
+        "selling_address": "Uttara Model Town, Uttara-14,Dhaka-1230",
+        "price": "Tk 90,000",
         "seller_info": {
             "name": "Malitha Runa",
             "email": "rmalitha0011@gmail.com"

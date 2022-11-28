@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import logo from '../../../assets/images/motorcycle-logo-vector.webp'
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -18,13 +19,16 @@ const Navbar = () => {
     {user?.uid ?
       <>
         <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><button onClick={handleLogOut}>Sign out</button></li>
+        <li><button onClick={handleLogOut}>Sign out <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        </button></li>
       </>
       : <li><Link to="/login">Login</Link></li>}
   </>
 
   return (
-    <div className="navbar bg-base-100 flex justify-between">
+    <div className="navbar bg-base-200 top-fixed flex justify-between py-6">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -34,7 +38,11 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-2xl font-bold uppercase">Desired Wheel</Link>
+        <img className='h-14 w-14 rounded-xl' src={logo} alt="" />
+        <div>
+
+          <Link to="/" className="btn btn-ghost text-2xl font-bold uppercase">Desired Wheel</Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">

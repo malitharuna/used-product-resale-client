@@ -1,29 +1,18 @@
 import React from 'react';
+import image from '../../assets/images/cover.jpg';
 
 const Carousal = () => {
   return (
-    <div>
-      <div className="carousel w-full">
-        <div id="item1" className="carousel-item w-full">
-          <img src="https://placeimg.com/800/200/arch" className="w-full" alt='' />
-        </div>
-        <div id="item2" className="carousel-item w-full">
-          <img src="https://placeimg.com/800/200/arch" className="w-full" alt='' />
-        </div>
-        <div id="item3" className="carousel-item w-full">
-          <img src="https://placeimg.com/800/200/arch" className="w-full" alt='' />
-        </div>
-        <div id="item4" className="carousel-item w-full">
-          <img src="https://placeimg.com/800/200/arch" className="w-full" alt='' />
-        </div>
-      </div>
-      <div className="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" className="btn btn-xs">1</a>
-        <a href="#item2" className="btn btn-xs">2</a>
-        <a href="#item3" className="btn btn-xs">3</a>
-        <a href="#item4" className="btn btn-xs">4</a>
-      </div>
+    <div className="hero min-h-screen" style={{ backgroundImage: `${image}` }}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold text-red-600">Grab Your Dream, Because Its Time to Move On</h1>
+      <p className="mb-5">We Provide our and Trust along with assurance, that you never be desatisfied with us and our Services. Stay Safe, Saty Alive. Be Happy With Your Motorcycle.</p>
+      {/* <button className="btn btn-primary">Get Started</button> */}
     </div>
+  </div>
+</div>
   );
 };
 
