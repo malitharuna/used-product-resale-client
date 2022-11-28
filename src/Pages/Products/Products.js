@@ -10,7 +10,8 @@ const Products = () => {
 
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  mx-auto py-6'>
+<div className='p-0 mx-auto'>
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6'>
       {
         products.map(product => <div key={product._id} className="card bg-base-100 text-left shadow-2xl ">
           <figure className="px-10 pt-10">
@@ -31,6 +32,7 @@ const Products = () => {
         )
       }
     </div>
+</div>
 
   );
 };
