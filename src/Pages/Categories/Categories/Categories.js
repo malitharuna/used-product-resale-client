@@ -11,7 +11,6 @@ const Categories = () => {
           const data = await res.json();
           return data;
         },
-
       });
       if(isLoading){
         return <div className='h-6 w-6 border-2 border-blue-600 border-dashed rounded-full'></div>

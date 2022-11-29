@@ -1,21 +1,48 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
-const Modal = ({booking}) => {
-    const {user} = useContext(AuthContext);
-    const {Img, model, price, YearofManufacture, seller_info, selling_address} = booking;
-    
+const Modal = ({ booking }) => {
+    const { user } = useContext(AuthContext);
+    const { Img, model, price, YearofManufacture, seller_info, selling_address } = booking;
+
     console.log(booking);
 
-    const orderSubmitHandler = (event) =>{
+    const orderSubmitHandler = (event) => {
         event.preventDefault()
         const from = event.target;
+        const number = from.number.value
+        const location = from.Location.value
+        console.log(number, location);
+
+        const bookingData = {
+            Img, model, price, YearofManufacture, seller_info, selling_address,
+            customerName: user.displayName,
+            customerEmail: user.email,
+            customerNumber: user.number,
+            customerLocation: user.location
+        }
+
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(bookingData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // if (data.acknowledged) {
+                //     // toast.succenss('booking')
+                // }
+                console.log(data);
+            })
+
     }
 
 
     return (
         <>
-          <input type="checkbox" id="my-modal" className="modal-toggle" />
+            <input type="checkbox" id="my-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box relative">
                     <label htmlFor='my-modal' className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
@@ -76,7 +103,7 @@ const Modal = ({booking}) => {
             </div>
         </>
 
-          
+
     );
 };
 
