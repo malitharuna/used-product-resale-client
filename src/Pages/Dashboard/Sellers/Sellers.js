@@ -38,8 +38,8 @@ const Sellers = () => {
                                 <th>{i+1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{<button className='btn btn-primary btn-sm'> Pay</button>}</td>
-                                <td>{<button className='btn btn-sm btn-accent'> Verify</button>}</td>  
+                                <td>{<button className='btn btn-primary btn-xs'> Pay</button>}</td>
+                                <td>{<button className='btn btn-xs btn-accent'> Verify</button>}</td>  
                             
                             </tr>
 

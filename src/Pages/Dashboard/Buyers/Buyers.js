@@ -38,7 +38,7 @@ const Buyers = () => {
                             <th>{i +1}</th>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
-                            <td>{<button className='btn btn-sm btn-warning'> Delete</button>}</td>
+                            <td>{<button className='btn btn-xs btn-warning'> Delete</button>}</td>
                         </tr>)
                         }
                     </tbody>
