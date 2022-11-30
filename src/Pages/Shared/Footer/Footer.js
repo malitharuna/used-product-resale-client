@@ -5,7 +5,7 @@ import socialicon2 from '../../../assets/social icon/tw.webp'
 
 const Footer = () => {
   return (
-    <div className="px-4 pt-16 md:px-24 lg:px-8 bg-red-600">
+    <div className="px-4 pt-16 md:px-24 lg:px-8 bg-red-600 mt-10" >
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
           <a

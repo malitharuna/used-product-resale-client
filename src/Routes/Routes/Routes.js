@@ -13,6 +13,9 @@ import Product from "../../Pages/Products/Products";
 import Register from "../../Pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Products from "../../Pages/Products/Products";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
+import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
+import MyProduct from "../../Pages/Dashboard/MyProduct/MyProduct";
 
 const router = createBrowserRouter([
     {
@@ -39,7 +42,7 @@ const router = createBrowserRouter([
             {
                 path: '/product/:brand',
                 loader: ({ params }) =>
-                fetch(`http://localhost:5000/product/${params.brand}`),
+                fetch(`https://resale-items-online-server.vercel.app/product/${params.brand}`),
                 element: <Products></Products>
             },
             {
@@ -57,13 +60,24 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <Orders></Orders>
             },
+            {    path: '/dashboard/allusers',
+                element: <AllUsers></AllUsers>
+            },
             {
                 path: '/dashboard/sellers',
                 element: <Sellers></Sellers>
             },
             {
+                path: '/dashboard/addproduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
                 path: '/dashboard/buyers',
                 element: <Buyers></Buyers>
+            },
+            {
+                path: '/dashboard/myproduct',
+                element: <MyProduct></MyProduct>
             },
         ]
     },

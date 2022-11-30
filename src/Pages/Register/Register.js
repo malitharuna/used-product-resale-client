@@ -61,7 +61,7 @@ const Register = () => {
             email: email,
             role: typeof role == "undefined" ? 'buyer' : role,
         }
-        fetch('http://localhost:5000/addUser', {
+        fetch('https://resale-items-online-server.vercel.app/addUser', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

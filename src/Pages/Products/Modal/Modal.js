@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Modal = ({ booking }) => {
@@ -22,7 +23,7 @@ const Modal = ({ booking }) => {
             customerLocation: user.location
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://resale-items-online-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -31,9 +32,9 @@ const Modal = ({ booking }) => {
         })
             .then(res => res.json())
             .then(data => {
-                // if (data.acknowledged) {
-                //     // toast.succenss('booking')
-                // }
+                if (data.acknowledged) {
+                    toast.success('booking complete');  
+                }
                 console.log(data);
             })
 

@@ -3,7 +3,7 @@ import image from '../../assets/images/cover.jpg';
 
 const Carousal = () => {
   return (
-    <div className="hero min-h-screen" style={{ backgroundImage: `${image}` }}>
+    <div className="hero min-h-screen" style={{ backgroundImage: `url("https://i.ibb.co/6RwqVVb/cover.jpg")` }}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">

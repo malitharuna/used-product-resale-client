@@ -8,7 +8,7 @@ const Buyers = () => {
     const { data: buyers = [], isLoading } = useQuery({
         queryKey: ['buyers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/sellers?role=buyer')
+            const res = await fetch('https://resale-items-online-server.vercel.app/sellers?role=buyer')
             const data = await res.json()
             return data;
         }
@@ -38,6 +38,7 @@ const Buyers = () => {
                             <th>{i +1}</th>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
+                            <td>{<button className='btn btn-primary btn-xs'> Pay</button>}</td>
                             <td>{<button className='btn btn-xs btn-warning'> Delete</button>}</td>
                         </tr>)
                         }

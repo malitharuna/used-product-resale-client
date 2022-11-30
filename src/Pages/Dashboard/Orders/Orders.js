@@ -8,7 +8,7 @@ const Orders = () => {
     const { data: orders = [], isLoading } = useQuery({
         queryKey: ["orders" ],  //user?.email           used by Jahankar ph//
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/orders?email=${user.email}`);
+            const res = await fetch(`https://resale-items-online-server.vercel.app/orders?email=${user.email}`);
             const data = await res.json();
             return data;
         },
@@ -19,7 +19,7 @@ const Orders = () => {
     console.log(orders);
 
     return (
-        <div className='bg-slate-200'>
+        <div className='bg-slate-200 w-[1000px]'>
             <h1 className='text-2xl font-bold pb-5'> My Order</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">    
