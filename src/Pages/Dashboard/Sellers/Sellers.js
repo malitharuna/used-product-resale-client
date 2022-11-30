@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import toast from "react-hot-toast";
 
 const Sellers = () => {
     const { user } = useContext(AuthContext);
+    console.log(user);
 
     const { data: sellers = [], isLoading, refetch } = useQuery({
         queryKey: ['sellers'],
@@ -14,42 +16,63 @@ const Sellers = () => {
         }
     })
 
+    const handleDelete =(id) =>{
+        fetch (`https://resale-items-online-server.vercel.app/users/${id}`,{
+            method:"DELETE",
+
+        })
+        .then(res=> res.json())
+        .then(data => {
+            console.log(data)
+            refetch()
+            toast.success('deleted successfull')
+        })
+
+        console.log(id);
+    }
+
     if (isLoading) {
         return <div className='h-6 w-6 border-2 border-blue-600 border-dashed rounded-full'></div>
     }
     console.log(sellers);
 
+
+
     return (
-        <div>
-            <div className="overflow-x-auto w-[1000px]">
+        <div className="mt-6 w-[1000px]">
+            <h2 className="text-3xl mb-4">All Sellers</h2>
+            <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Pay</th>
-                            <th>Verify</th>
+                            {/* <th>Admin</th> */}
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            sellers.map((seller, i) => <tr>
-                                <th>{i+1}</th>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>{<button className='btn btn-xs btn-accent'> Verify</button>}</td>  
-                            
+                        {sellers.map((seller, i) => (
+                            <tr key={seller._id}>
+                                <th>{i + 1}</th>
+                                <td>{seller.name}</td>
+                                <td>{seller.email}</td>
+                                <td>
+                                    <button onClick={()=> handleDelete(seller._id)}
+                                        
+                                        className="btn btn-xs btn-danger"
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
                             </tr>
-
-                            )
-                        }
-                        
-
+                        ))}
                     </tbody>
                 </table>
             </div>
         </div>
+
     );
 };
 

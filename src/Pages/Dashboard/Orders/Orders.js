@@ -40,8 +40,8 @@ const Orders = () => {
                                 <td>{order.model}</td>
                                 <td>{user.email}</td>
                                 <td>{order.price}</td>
-                                <td>{<button className='btn btn-success btn-xs'> Pay</button>}</td>
-                                <td>{<button className='btn btn-xs btn-warning'> Delete</button>}</td>  
+                                <td><button className='btn btn-success btn-xs'> Pay</button></td>
+                                <td><button className='btn btn-xs btn-warning'> Delete</button></td>  
                             </tr> )
                         }
                       
