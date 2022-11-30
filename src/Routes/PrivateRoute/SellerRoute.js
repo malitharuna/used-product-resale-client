@@ -7,7 +7,7 @@ const SellerRoute = ({children}) => {
 
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
-    const [isSeller] = useSeller(user.email);
+    const [isSeller] = useSeller(user?.email);
      
     if(loading){
         return <progress className="progress w-56"></progress>
@@ -15,7 +15,7 @@ const SellerRoute = ({children}) => {
     if(user && isSeller){
         return children;
     }
-    return <Navigate to='/login' state={{from: location}} replace></Navigate>
+    return <Navigate to='*'></Navigate>
 };
 
 export default SellerRoute;
